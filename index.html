@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=VT323&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Fira+Code:wght@300;400;600&family=VT323&display=swap"
         rel="stylesheet">
 </head>
 
@@ -18,39 +19,141 @@
     <div class="scanline"></div>
     <div class="overlay"></div>
 
+    <!-- Floating geometric decorations -->
+    <div class="geo-shapes">
+        <div class="hex hex-1"></div>
+        <div class="hex hex-2"></div>
+        <div class="hex hex-3"></div>
+        <div class="circle-ring circle-1"></div>
+        <div class="circle-ring circle-2"></div>
+        <div class="diamond diamond-1"></div>
+        <div class="diamond diamond-2"></div>
+    </div>
+
     <main class="terminal-container">
+        <!-- Animated corner accents -->
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="border-glow"></div>
+
         <header class="terminal-header">
+            <div class="status-bar">
+                <span class="status-dot pulse"></span>
+                <span class="status-text">SISTEMA ATTIVO</span>
+                <span class="status-id">ID: MX-7734</span>
+            </div>
             <h1 class="glitch-text" data-text="GENERATORE DI SCUSE">GENERATORE DI SCUSE</h1>
-            <p class="terminal-subtitle">PROTOCOLLO EVASIONE LAVORO</p>
+            <p class="terminal-subtitle">
+                <span class="bracket">[</span> PROTOCOLLO EVASIONE LAVORO <span class="bracket">]</span>
+            </p>
+            <div class="header-line">
+                <div class="line-segment"></div>
+                <div class="line-diamond"></div>
+                <div class="line-segment"></div>
+            </div>
         </header>
 
         <section class="console-box">
             <div class="controls">
                 <div class="filter-group">
-                    <label for="absurdity-filter">LIVELLO ASSURDITÀ</label>
-                    <select id="absurdity-filter">
-                        <option value="all">TUTTI I SETTORI</option>
-                        <option value="1">1 - REALISTICO</option>
-                        <option value="2">2 - MODERATO</option>
-                        <option value="3">3 - TOTALE</option>
-                    </select>
+                    <label for="absurdity-filter">
+                        <span class="label-icon">◆</span> LIVELLO ASSURDITÀ
+                    </label>
+                    <div class="select-wrapper">
+                        <select id="absurdity-filter">
+                            <option value="all">TUTTI I SETTORI</option>
+                            <option value="1">▸ LV.1 — REALISTICO</option>
+                            <option value="2">▸ LV.2 — MODERATO</option>
+                            <option value="3">▸ LV.3 — TOTALE</option>
+                        </select>
+                        <div class="select-arrow">▾</div>
+                    </div>
                 </div>
             </div>
 
             <div class="terminal-output" id="excuse-display">
-                <p class="typing-text">>_ PRONTO PER L'ESTRAZIONE</p>
+                <div class="output-scanline"></div>
+                <p class="typing-text">&gt;_ PRONTO PER L'ESTRAZIONE</p>
             </div>
 
             <div class="bypass-area">
                 <button id="generate-btn" class="hacker-btn">
-                    <span class="btn-text">GENERA</span>
-                    <span class="btn-glitch" aria-hidden>GENERA</span>
+                    <span class="btn-bg"></span>
+                    <span class="btn-text">
+                        <span class="btn-icon">⟐</span> GENERA <span class="btn-icon">⟐</span>
+                    </span>
                 </button>
+                <button id="toggle-add-btn" class="hacker-btn btn-secondary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-text">+ AGGIUNGI</span>
+                </button>
+            </div>
+
+            <!-- Add Excuse Panel -->
+            <div class="add-panel" id="add-panel">
+                <div class="add-panel-header">
+                    <span class="label-icon">◆</span> INSERISCI NUOVA SCUSA
+                </div>
+                <div class="add-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="new-level">LIVELLO</label>
+                            <div class="select-wrapper">
+                                <select id="new-level">
+                                    <option value="1">1 — REALISTICO</option>
+                                    <option value="2">2 — MODERATO</option>
+                                    <option value="3">3 — TOTALE</option>
+                                </select>
+                                <div class="select-arrow">▾</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-category">CATEGORIA</label>
+                            <div class="select-wrapper">
+                                <select id="new-category">
+                                    <option value="Realistica">Realistica</option>
+                                    <option value="Assurda">Assurda</option>
+                                </select>
+                                <div class="select-arrow">▾</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-length">LUNGHEZZA</label>
+                            <div class="select-wrapper">
+                                <select id="new-length">
+                                    <option value="Corta">Corta</option>
+                                    <option value="Lunga">Lunga</option>
+                                </select>
+                                <div class="select-arrow">▾</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="new-excuse-text">TESTO SCUSA</label>
+                        <textarea id="new-excuse-text" placeholder="Scrivi la tua scusa qui..." rows="2"></textarea>
+                    </div>
+                    <div class="add-actions">
+                        <button id="add-excuse-btn" class="hacker-btn btn-add">
+                            <span class="btn-bg"></span>
+                            <span class="btn-text">⟐ INSERISCI</span>
+                        </button>
+                        <span id="add-feedback" class="add-feedback"></span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <footer class="terminal-footer">
-            <p>V0.9.3 - ENCRYPTED CONNECTION</p>
+            <div class="footer-line"></div>
+            <div class="footer-content">
+                <span>◈ V0.9.3</span>
+                <span class="footer-sep">|</span>
+                <span>ENCRYPTED CONNECTION</span>
+                <span class="footer-sep">|</span>
+                <span class="signal-strength">▁▃▅▇</span>
+            </div>
         </footer>
     </main>
 

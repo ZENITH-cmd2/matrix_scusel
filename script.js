@@ -170,7 +170,73 @@ window.addEventListener('resize', initMatrix);
 document.addEventListener('DOMContentLoaded', () => {
     initMatrix();
     setInterval(drawMatrix, 35);
-    loadExcuses();
+    loadExcuses().then(() => loadCustomExcuses());
 
     document.getElementById('generate-btn').addEventListener('click', generateExcuse);
+
+    // Toggle add panel
+    const toggleBtn = document.getElementById('toggle-add-btn');
+    const addPanel = document.getElementById('add-panel');
+    if (toggleBtn && addPanel) {
+        toggleBtn.addEventListener('click', () => {
+            addPanel.classList.toggle('open');
+        });
+    }
+
+    // Add excuse
+    const addBtn = document.getElementById('add-excuse-btn');
+    if (addBtn) {
+        addBtn.addEventListener('click', addExcuse);
+    }
 });
+
+// Aggiunge una nuova scusa
+function addExcuse() {
+    const level = document.getElementById('new-level').value;
+    const category = document.getElementById('new-category').value;
+    const length = document.getElementById('new-length').value;
+    const text = document.getElementById('new-excuse-text').value.trim();
+    const feedback = document.getElementById('add-feedback');
+
+    if (!text) {
+        showFeedback(feedback, '⚠ INSERISCI UN TESTO', true);
+        return;
+    }
+
+    // Aggiungi all'array attivo
+    const newExcuse = { level, category, length, sentence: text };
+    excuses.push(newExcuse);
+
+    // Salva in localStorage
+    const custom = JSON.parse(localStorage.getItem('custom_excuses') || '[]');
+    custom.push(newExcuse);
+    localStorage.setItem('custom_excuses', JSON.stringify(custom));
+
+    // Formato per scuse.txt
+    const line = `${level}|${category}|${length}|${text}`;
+    navigator.clipboard.writeText(line).then(() => {
+        showFeedback(feedback, '✓ AGGIUNTA + COPIATA PER SCUSE.TXT');
+    }).catch(() => {
+        showFeedback(feedback, '✓ AGGIUNTA AL DATABASE LOCALE');
+    });
+
+    // Reset form
+    document.getElementById('new-excuse-text').value = '';
+}
+
+function showFeedback(el, msg, isError = false) {
+    el.textContent = msg;
+    el.style.color = isError ? 'var(--neon-pink)' : 'var(--neon-cyan)';
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+// Carica anche scuse custom da localStorage
+function loadCustomExcuses() {
+    const custom = JSON.parse(localStorage.getItem('custom_excuses') || '[]');
+    excuses.push(...custom);
+    if (custom.length > 0) {
+        console.log('Scuse custom caricate:', custom.length);
+    }
+}
+
