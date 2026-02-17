@@ -4,107 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MATRIX - Login</title>
+    <title>MATRIX GEN | Login</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Fira+Code:wght@300;400;600&family=VT323&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@700&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <canvas id="matrix-canvas"></canvas>
+    <div class="overlay-dark"></div>
 
-    <div class="scanline"></div>
-    <div class="overlay"></div>
+    <header class="glass-header">
+        <div class="logo">MATRIX <span class="highlight">GEN</span></div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Generator</a>
+            <a href="login.html" class="nav-link active">Login</a>
+        </nav>
+    </header>
 
-    <!-- Floating geometric decorations -->
-    <div class="geo-shapes">
-        <div class="hex hex-1"></div>
-        <div class="hex hex-2"></div>
-        <div class="hex hex-3"></div>
-        <div class="circle-ring circle-1"></div>
-        <div class="circle-ring circle-2"></div>
-        <div class="diamond diamond-1"></div>
-        <div class="diamond diamond-2"></div>
-    </div>
-
-    <main class="terminal-container login-container">
-        <!-- Animated corner accents -->
-        <div class="corner corner-tl"></div>
-        <div class="corner corner-tr"></div>
-        <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
-        <div class="border-glow"></div>
-
-        <header class="terminal-header">
-            <h1 class="glitch-text" data-text="ACCESSO RISERVATO">ACCESSO RISERVATO</h1>
-            <p class="terminal-subtitle">
-                <span class="bracket">[</span> IDENTIFICAZIONE RICHIESTA <span class="bracket">]</span>
-            </p>
-            <div class="header-line">
-                <div class="line-segment"></div>
-                <div class="line-diamond"></div>
-                <div class="line-segment"></div>
+    <main class="main-content">
+        <div class="glass-card">
+            <div class="card-header">
+                <h1>Accesso Riservato</h1>
+                <p class="subtitle">Inserisci il codice per contribuire al database.</p>
             </div>
-        </header>
 
-        <section class="console-box login-box">
             <!-- Login Form -->
-            <div id="login-form-container" class="add-form" style="display: flex;">
-                <div class="form-group full-width">
-                    <label for="login-password">PASSWORD DI SISTEMA</label>
-                    <input type="password" id="login-password" placeholder="Inserisci codice accesso..."
-                        class="matrix-input">
-                </div>
+            <div id="login-form-container">
+                <input type="password" id="login-password" class="modern-input" placeholder="Password di sistema...">
 
-                <div class="add-actions" style="justify-content: center; flex-direction: column; gap: 1rem;">
-                    <button id="login-btn" class="hacker-btn">
-                        <span class="btn-bg"></span>
-                        <span class="btn-text">⟐ ACCEDI AL SISTEMA</span>
-                    </button>
-                    <a href="#" id="toggle-register"
-                        style="color: var(--matrix-dark-green); text-decoration: none; font-size: 0.8rem; letter-spacing: 1px;">
-                        NON HAI UN CODICE? REGISTRATI
-                    </a>
+                <button id="login-btn" class="pill-btn primary large" style="margin-top: 1rem;">
+                    ACCEDI
+                </button>
+
+                <div style="margin-top: 1.5rem;">
+                    <a href="#" id="toggle-register" class="nav-link" style="font-size: 0.9rem;">Non hai un codice?
+                        Registrati</a>
                 </div>
-                <div style="text-align: center; margin-top: 1rem;">
-                    <span id="login-feedback" class="add-feedback"></span>
-                </div>
+                <div id="login-feedback" class="form-feedback"></div>
             </div>
 
-            <!-- Fake Registration Form -->
-            <div id="register-form-container" class="add-form" style="display: none;">
-                <div class="form-group full-width">
-                    <label for="register-email">EMAIL AZIENDALE</label>
-                    <input type="email" id="register-email" placeholder="nome@azienda.com" class="matrix-input">
-                </div>
+            <!-- Register Form -->
+            <div id="register-form-container" style="display: none;">
+                <input type="email" id="register-email" class="modern-input" placeholder="Email aziendale...">
 
-                <div class="add-actions" style="justify-content: center; flex-direction: column; gap: 1rem;">
-                    <button id="register-btn" class="hacker-btn btn-secondary">
-                        <span class="btn-bg"></span>
-                        <span class="btn-text">⟐ REGISTRA ACCESSO</span>
-                    </button>
-                    <a href="#" id="toggle-login"
-                        style="color: var(--matrix-dark-green); text-decoration: none; font-size: 0.8rem; letter-spacing: 1px;">
-                        TORNA AL LOGIN
-                    </a>
-                </div>
-                <div style="text-align: center; margin-top: 1rem;">
-                    <span id="register-feedback" class="add-feedback"></span>
-                </div>
-            </div>
-        </section>
+                <button id="register-btn" class="pill-btn secondary large" style="margin-top: 1rem;">
+                    REGISTRA EMAIL
+                </button>
 
-        <footer class="terminal-footer">
-            <div class="footer-line"></div>
-            <div class="footer-content">
-                <span>◈ SECURITY LEVEL: HIGH</span>
-                <span class="footer-sep">|</span>
-                <span>NO UNAUTHORIZED ACCESS</span>
+                <div style="margin-top: 1.5rem;">
+                    <a href="#" id="toggle-login" class="nav-link" style="font-size: 0.9rem;">Torna al Login</a>
+                </div>
+                <div id="register-feedback" class="form-feedback"></div>
             </div>
-        </footer>
+        </div>
     </main>
 
     <script src="script.js"></script>

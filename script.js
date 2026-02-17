@@ -255,9 +255,17 @@ function addExcuse() {
 
 function showFeedback(el, msg, isError = false) {
     el.textContent = msg;
-    el.style.color = isError ? 'var(--neon-pink)' : 'var(--neon-cyan)';
+    el.className = 'form-feedback ' + (isError ? 'error' : 'success');
+    // Force reflow
+    void el.offsetWidth;
     el.classList.add('show');
-    setTimeout(() => el.classList.remove('show'), 2500);
+    setTimeout(() => {
+        el.classList.remove('show');
+        // Reset classes after hide
+        setTimeout(() => {
+            el.className = 'form-feedback';
+        }, 300);
+    }, 2500);
 }
 
 // Carica anche scuse custom da localStorage
