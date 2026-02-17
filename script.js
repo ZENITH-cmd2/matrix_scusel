@@ -140,20 +140,14 @@ window.addEventListener('resize', initMatrix);
 document.addEventListener('DOMContentLoaded', () => {
     initMatrix();
     setInterval(drawMatrix, 35);
-    loadExcuses().then(() => loadCustomExcuses());
 
-    document.getElementById('generate-btn').addEventListener('click', generateExcuse);
-
-    // Toggle add panel
-    const toggleBtn = document.getElementById('toggle-add-btn');
-    const addPanel = document.getElementById('add-panel');
-    if (toggleBtn && addPanel) {
-        toggleBtn.addEventListener('click', () => {
-            addPanel.classList.toggle('open');
-        });
+    // Carica scuse solo se siamo nella home (dove serve generarle)
+    if (document.getElementById('generate-btn')) {
+        loadExcuses().then(() => loadCustomExcuses());
+        document.getElementById('generate-btn').addEventListener('click', generateExcuse);
     }
 
-    // Add excuse
+    // Gestione pagina Aggiungi
     const addBtn = document.getElementById('add-excuse-btn');
     if (addBtn) {
         addBtn.addEventListener('click', addExcuse);

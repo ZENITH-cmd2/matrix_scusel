@@ -888,35 +888,46 @@ select option {
     color: var(--bg-black);
 }
 
-/* ===== Add Panel ===== */
-.add-panel {
-    margin-top: 1.5rem;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
-}
-
-.add-panel.open {
-    max-height: 500px;
-    opacity: 1;
-}
-
-.add-panel-header {
-    font-family: var(--display-font);
-    font-size: 0.6rem;
-    letter-spacing: 3px;
-    opacity: 0.5;
-    margin-bottom: 1rem;
+/* ===== Add Page Button ===== */
+.add-page-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--matrix-dim);
+    background: rgba(0, 15, 0, 0.8);
+    color: var(--matrix-green);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    text-decoration: none;
+    font-family: var(--display-font);
+    font-size: 1.2rem;
+    font-weight: bold;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    transition: all 0.3s ease;
+    z-index: 10;
 }
 
+.add-page-btn:hover {
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+    box-shadow: 0 0 10px rgba(0, 255, 249, 0.2);
+    transform: scale(1.1);
+}
+
+.add-page-btn:active {
+    background: var(--neon-cyan);
+    color: #000;
+}
+
+/* ===== Add Form (Standalone) ===== */
 .add-form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
+    padding: 1rem 0;
 }
 
 .form-row {

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATRIX - Aggiungi Scusa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Fira+Code:wght@300;400;600&family=VT323&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="scanline"></div>
+    <div class="overlay"></div>
+
+    <!-- Floating geometric decorations -->
+    <div class="geo-shapes">
+        <div class="hex hex-1"></div>
+        <div class="hex hex-2"></div>
+        <div class="hex hex-3"></div>
+        <div class="circle-ring circle-1"></div>
+        <div class="circle-ring circle-2"></div>
+        <div class="diamond diamond-1"></div>
+        <div class="diamond diamond-2"></div>
+    </div>
+
+    <main class="terminal-container">
+        <!-- Animated corner accents -->
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="border-glow"></div>
+
+        <header class="terminal-header">
+            <div class="status-bar">
+                <span class="status-dot pulse"></span>
+                <span class="status-text">MODALITÀ INSERIMENTO</span>
+                <span class="status-id">ID: MX-ADD-01</span>
+            </div>
+            <h1 class="glitch-text" data-text="NUOVA SCUSA">NUOVA SCUSA</h1>
+            <div class="header-line">
+                <div class="line-segment"></div>
+                <div class="line-diamond"></div>
+                <div class="line-segment"></div>
+            </div>
+        </header>
+
+        <section class="console-box">
+            <!-- Add Excuse Form -->
+            <div class="add-form" style="display: flex;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="new-level">LIVELLO</label>
+                        <div class="select-wrapper">
+                            <select id="new-level">
+                                <option value="1">1 — REALISTICO</option>
+                                <option value="2">2 — MODERATO</option>
+                                <option value="3">3 — TOTALE</option>
+                            </select>
+                            <div class="select-arrow">▾</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-category">CATEGORIA</label>
+                        <div class="select-wrapper">
+                            <select id="new-category">
+                                <option value="Realistica">Realistica</option>
+                                <option value="Assurda">Assurda</option>
+                            </select>
+                            <div class="select-arrow">▾</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-length">LUNGHEZZA</label>
+                        <div class="select-wrapper">
+                            <select id="new-length">
+                                <option value="Corta">Corta</option>
+                                <option value="Lunga">Lunga</option>
+                            </select>
+                            <div class="select-arrow">▾</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="new-excuse-text">TESTO SCUSA</label>
+                    <textarea id="new-excuse-text" placeholder="Scrivi la tua scusa qui..." rows="4"></textarea>
+                </div>
+                <div class="add-actions" style="justify-content: space-between;">
+                    <a href="index.html" class="hacker-btn btn-secondary"
+                        style="text-decoration: none; display: inline-block; text-align: center;">
+                        <span class="btn-text">← INDIETRO</span>
+                    </a>
+                    <button id="add-excuse-btn" class="hacker-btn btn-add">
+                        <span class="btn-bg"></span>
+                        <span class="btn-text">⟐ INSERISCI</span>
+                    </button>
+                </div>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <span id="add-feedback" class="add-feedback"></span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="terminal-footer">
+            <div class="footer-line"></div>
+            <div class="footer-content">
+                <span>◈ DATABASE ACCESS</span>
+                <span class="footer-sep">|</span>
+                <span>WRITE ONLY MODE</span>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
