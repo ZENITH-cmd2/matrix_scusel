@@ -2,38 +2,6 @@
  * MATRIX EXCUSE GENERATOR
  */
 
-// Scuse integrate direttamente nel codice (funziona senza server)
-const SCUSE_DATA = `1|Realistica|Corta|Buongiorno capo, ho la febbre alta e devo restare a letto.
-1|Realistica|Lunga|Buongiorno capo, la chiamo per avvisarla che il medico mi ha consigliato riposo assoluto perché ho la febbre e sono molto debilitato. Mi scuso per il disagio.
-1|Realistica|Corta|Buongiorno capo, stanotte ho avuto un forte mal di testa e non ho chiuso occhio.
-1|Realistica|Lunga|Buongiorno capo, volevo avvisarla che ho passato la notte con un'emicrania intensa e non sono riuscito a dormire, mi sento completamente esausto. Oggi non riesco a venire.
-1|Realistica|Corta|Buongiorno capo, la macchina non parte questa mattina, sto cercando di risolvere.
-1|Realistica|Lunga|Buongiorno capo, purtroppo l'auto non si accende e il meccanico può intervenire solo nelle prossime ore. Farò il possibile per arrivare appena si risolve.
-1|Realistica|Corta|Buongiorno capo, devo accompagnare un familiare a una visita urgente.
-1|Realistica|Lunga|Buongiorno capo, mi scuso ma un familiare ha bisogno di essere accompagnato a una visita medica urgente e non posso rimandare. La tengo aggiornata.
-1|Realistica|Corta|Buongiorno capo, ho un problema idraulico improvviso in casa.
-1|Realistica|Lunga|Buongiorno capo, c'è una perdita d'acqua importante in casa e sto aspettando l'idraulico per sistemare il guasto. Non posso lasciare l'appartamento in queste condizioni.
-2|Assurda|Corta|Buongiorno capo, il mio cane ha mangiato le chiavi della macchina.
-2|Assurda|Lunga|Buongiorno capo, non ci crederà ma il mio cane ha ingerito le chiavi dell'auto e sto aspettando indicazioni dal veterinario. La tengo aggiornata.
-2|Assurda|Corta|Buongiorno capo, sono rimasto chiuso dentro casa.
-2|Assurda|Lunga|Buongiorno capo, la serratura si è bloccata improvvisamente e non riesco ad aprire la porta per uscire. Ho già chiamato il fabbro.
-2|Assurda|Corta|Buongiorno capo, un vicino ha allagato il mio appartamento.
-2|Assurda|Lunga|Buongiorno capo, mi scuso ma durante la notte il vicino ha causato un allagamento e sto gestendo i danni in casa. È un disastro.
-2|Assurda|Corta|Buongiorno capo, il gatto ha distrutto il mio computer del lavoro.
-2|Assurda|Lunga|Buongiorno capo, il mio gatto ha rovesciato il caffè sul PC acceso e ora non funziona più, sto cercando di risolvere per poter lavorare.
-2|Assurda|Corta|Buongiorno capo, un piccione è entrato in casa e non riesco a farlo uscire.
-2|Assurda|Lunga|Buongiorno capo, un piccione è entrato dalla finestra e sto cercando di farlo uscire senza devastare il soggiorno. La situazione è più complicata del previsto.
-3|Assurda|Corta|Buongiorno capo, un'entità interdimensionale ha sabotato la mia sveglia.
-3|Assurda|Lunga|Buongiorno capo, sono certo che un'entità interdimensionale abbia interferito con la mia sveglia facendomi perdere il senso del tempo. È una cosa seria.
-3|Assurda|Corta|Buongiorno capo, sono stato convocato da una società segreta.
-3|Assurda|Lunga|Buongiorno capo, ho ricevuto una convocazione urgente da una società segreta che richiede la mia presenza immediata. Non posso dire di più.
-3|Assurda|Corta|Buongiorno capo, ho aperto per sbaglio un portale temporale in cucina.
-3|Assurda|Lunga|Buongiorno capo, mentre facevo colazione ho attivato accidentalmente un portale temporale in cucina e la situazione è sfuggita di mano. Sto cercando di chiuderlo.
-3|Assurda|Corta|Buongiorno capo, il mio tostapane ha sviluppato autocoscienza.
-3|Assurda|Lunga|Buongiorno capo, il tostapane sembra aver sviluppato autocoscienza e sto cercando di capire come disattivarlo in sicurezza. Non mi sento di lasciarlo solo.
-3|Assurda|Corta|Buongiorno capo, un drone misterioso sorvola il mio balcone da ore.
-3|Assurda|Lunga|Buongiorno capo, da ore un drone misterioso sta sorvolando il mio balcone e non mi sento tranquillo a uscire di casa. Ho chiamato le autorità.`;
-
 let excuses = [];
 const canvas = document.getElementById('matrix-canvas');
 const ctx = canvas.getContext('2d');
@@ -87,18 +55,20 @@ function parseExcuses(text) {
     return parsed;
 }
 
-// Carica scuse: prima prova fetch, se fallisce usa i dati integrati
+// Carica scuse esclusivamente da scuse.txt
 async function loadExcuses() {
     try {
         const response = await fetch('scuse.txt');
-        if (!response.ok) throw new Error('Fetch fallito');
+        if (!response.ok) throw new Error('File non trovato');
         const text = await response.text();
         excuses = parseExcuses(text);
-        console.log('Database caricato da file:', excuses.length);
+        console.log('Database caricato da scuse.txt:', excuses.length);
     } catch (error) {
-        // Fallback: usa le scuse integrate direttamente nel codice
-        excuses = parseExcuses(SCUSE_DATA);
-        console.log('Database caricato (integrato):', excuses.length);
+        console.error('Errore caricamento scuse.txt:', error);
+        const display = document.getElementById('excuse-display');
+        if (display) {
+            display.innerHTML = '<p class="typing-text">&gt;_ ERRORE: DATABASE NON TROVATO</p>';
+        }
     }
 }
 
