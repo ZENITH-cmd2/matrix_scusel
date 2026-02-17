@@ -8,6 +8,26 @@
 1|Realistica|Lunga|Buongiorno capo, mi scuso ma un familiare ha bisogno di essere accompagnato a una visita medica urgente e non posso rimandare. La tengo aggiornata.
 1|Realistica|Corta|Buongiorno capo, ho un problema idraulico improvviso in casa.
 1|Realistica|Lunga|Buongiorno capo, c'è una perdita d'acqua importante in casa e sto aspettando l'idraulico per sistemare il guasto. Non posso lasciare l'appartamento in queste condizioni.
+1|Realistica|Corta|Buongiorno capo, ho un'urgenza dentistica improvvisa.
+1|Realistica|Lunga|Buongiorno capo, mi si è scheggiato un dente facendo colazione e devo correre dal dentista d'urgenza. Arriverò appena possibile o prenderò la giornata.
+1|Realistica|Corta|Buongiorno capo, ho avuto un guasto ai tubi dell'acqua.
+1|Realistica|Lunga|Buongiorno capo, mi sono svegliato con la cucina allagata per un tubo rotto. Sto aspettando l'idraulico e non posso lasciare casa incustodita.
+1|Realistica|Corta|Buongiorno capo, sono bloccato con la schiena.
+1|Realistica|Lunga|Buongiorno capo, ho fatto un movimento falso e mi sono bloccato con la schiena, fatico ad alzarmi dal letto. Oggi devo riposare.
+1|Realistica|Corta|Buongiorno capo, ho un'intossicazione alimentare.
+1|Realistica|Lunga|Buongiorno capo, credo che la cena di ieri mi abbia fatto male, ho passato una nottata terribile e non sono in condizioni di viaggiare.
+1|Realistica|Corta|Buongiorno capo, c'è un incidente che blocca l'uscita del quartiere.
+1|Realistica|Lunga|Buongiorno capo, un camion si è intraversato sull'unica strada per uscire dal mio quartiere, i vigili dicono che ci vorranno ore.
+1|Realistica|Corta|Buongiorno capo, mi hanno clonato la carta di credito, devo correre in banca.
+1|Realistica|Lunga|Buongiorno capo, ho scoperto dei movimenti strani sul conto e devo andare in banca e dai carabinieri per bloccare tutto immediatamente.
+1|Realistica|Corta|Buongiorno capo, la batteria dell'auto è completamente morta.
+1|Realistica|Lunga|Buongiorno capo, l'auto non dà segni di vita, sto aspettando l'elettrauto per farla ripartire ma ci vorrà del tempo.
+1|Realistica|Corta|Buongiorno capo, ho smarrito le chiavi di casa e non posso chiudere.
+1|Realistica|Lunga|Buongiorno capo, non trovo più le chiavi di casa e non posso uscire lasciando tutto aperto. Sto aspettando che qualcuno mi porti il duplicato.
+1|Realistica|Corta|Buongiorno capo, c'è uno sciopero dei mezzi non annunciato.
+1|Realistica|Lunga|Buongiorno capo, a causa dello sciopero improvviso non c'è modo di raggiungere l'ufficio, sto provando a cercare alternative ma è il caos.
+1|Realistica|Corta|Buongiorno capo, mi hanno anticipato una visita specialistica a oggi.
+1|Realistica|Lunga|Buongiorno capo, l'ospedale mi ha anticipato la visita a stamattina all'improvviso, non posso perderla visti i tempi di attesa biblici.
 
 2|Assurda|Corta|Buongiorno capo, il mio cane ha mangiato le chiavi della macchina.
 2|Assurda|Lunga|Buongiorno capo, non ci crederà ma il mio cane ha ingerito le chiavi dell'auto e sto aspettando indicazioni dal veterinario. La tengo aggiornata.
@@ -19,6 +39,26 @@
 2|Assurda|Lunga|Buongiorno capo, il mio gatto ha rovesciato il caffè sul PC acceso e ora non funziona più, sto cercando di risolvere per poter lavorare.
 2|Assurda|Corta|Buongiorno capo, un piccione è entrato in casa e non riesco a farlo uscire.
 2|Assurda|Lunga|Buongiorno capo, un piccione è entrato dalla finestra e sto cercando di farlo uscire senza devastare il soggiorno. La situazione è più complicata del previsto.
+2|Assurda|Corta|Buongiorno capo, sono rimasto chiuso sul balcone a stendere.
+2|Assurda|Lunga|Buongiorno capo, sono uscito a stendere e la porta finestra si è chiusa alle mie spalle. Sto aspettando che i pompieri mi tirino giù.
+2|Assurda|Corta|Buongiorno capo, l'ascensore si è bloccato tra due piani con me dentro.
+2|Assurda|Lunga|Buongiorno capo, sono bloccato in ascensore da 40 minuti, i tecnici stanno arrivando ma la situazione va per le lunghe.
+2|Assurda|Corta|Buongiorno capo, ho trovato un cane smarrito e aspetto il padrone.
+2|Assurda|Lunga|Buongiorno capo, ho trovato un cane che vagava in strada e non me la sento di lasciarlo solo, aspetto che arrivi la protezione animali o il padrone.
+2|Assurda|Corta|Buongiorno capo, c'è un nido di vespe giganti davanti alla porta d'ingresso.
+2|Assurda|Lunga|Buongiorno capo, delle vespe hanno fatto il nido proprio sullo stipite della porta e sono molto aggressive, non riesco ad uscire di casa.
+2|Assurda|Corta|Buongiorno capo, mi hanno rubato le scarpe dal pianerottolo, non ho il cambio.
+2|Assurda|Lunga|Buongiorno capo, avevo lasciato le scarpe fuori ad asciugare e sono sparite. Non ho altre paia "decenti" per venire in ufficio al momento.
+2|Assurda|Corta|Buongiorno capo, il gatto ha vomitato sulla mia divisa/abito proprio ora.
+2|Assurda|Lunga|Buongiorno capo, stavo per uscire ma il gatto ha deciso di star male proprio sui miei vestiti di lavoro. Devo lavare tutto d'urgenza.
+2|Assurda|Corta|Buongiorno capo, l'allarme di casa non smette di suonare e i vicini protestano.
+2|Assurda|Lunga|Buongiorno capo, l'antifurto è impazzito e suona ininterrottamente, non posso lasciarlo così o i vicini chiamano la polizia.
+2|Assurda|Corta|Buongiorno capo, ho scambiato lo zaino in palestra per sbaglio.
+2|Assurda|Lunga|Buongiorno capo, per errore ho preso la borsa di qualcun altro in palestra e dentro c'erano le mie chiavi dell'ufficio. Devo tornare a fare lo scambio.
+2|Assurda|Corta|Buongiorno capo, sono rimasto incollato a un mobile col super attack.
+2|Assurda|Lunga|Buongiorno capo, stavo riparando un mobile e per sbaglio mi sono incollato le dita al cassetto. Sto andando al pronto soccorso per staccarmi.
+2|Assurda|Corta|Buongiorno capo, il mio pappagallo è scappato dalla finestra.
+2|Assurda|Lunga|Buongiorno capo, il mio pappagallo è volato via e lo sto inseguendo per tutto il quartiere, non posso lasciarlo al suo destino.
 
 3|Assurda|Corta|Buongiorno capo, un'entità interdimensionale ha sabotato la mia sveglia.
 3|Assurda|Lunga|Buongiorno capo, sono certo che un'entità interdimensionale abbia interferito con la mia sveglia facendomi perdere il senso del tempo. È una cosa seria.
@@ -30,7 +70,6 @@
 3|Assurda|Lunga|Buongiorno capo, il tostapane sembra aver sviluppato autocoscienza e sto cercando di capire come disattivarlo in sicurezza. Non mi sento di lasciarlo solo.
 3|Assurda|Corta|Buongiorno capo, un drone misterioso sorvola il mio balcone da ore.
 3|Assurda|Lunga|Buongiorno capo, da ore un drone misterioso sta sorvolando il mio balcone e non mi sento tranquillo a uscire di casa. Ho chiamato le autorità.
-
 3|Assurda|Corta|Buongiorno capo, sono bloccato in un loop temporale, le ho già mandato questo messaggio domani.
 3|Assurda|Lunga|Buongiorno capo, sono intrappolato in un loop temporale ricorsivo e continuo a rivivere la colazione senza poter uscire di casa. Spero di uscirne prima della riunione di ieri.
 3|Assurda|Corta|Buongiorno capo, il mio frigorifero ha dichiarato guerra al tostapane.
@@ -51,3 +90,13 @@
 3|Assurda|Lunga|Buongiorno capo, sto riscontrando un lag pazzesco nella vita reale, mi muovo a scatti e l'audio non è sincronizzato. Devo aspettare che la patch venga installata.
 3|Assurda|Corta|Buongiorno capo, sono diventato un NPC.
 3|Assurda|Lunga|Buongiorno capo, oggi ho solo linee di dialogo preimpostate e non posso compiere azioni non scriptate. Tornerò giocabile al prossimo aggiornamento.
+3|Assurda|Corta|Buongiorno capo, sono stato reclutato dai Men in Black (credo).
+3|Assurda|Lunga|Buongiorno capo, due tizi in nero mi hanno sparaflashato e ora non ricordo dove lavoro o chi sono. Mi serve un giorno per recuperare la memoria.
+3|Assurda|Corta|Buongiorno capo, ho scambiato corpo con il mio gatto.
+3|Assurda|Lunga|Buongiorno capo, stamattina mi sono svegliato nel corpo del mio gatto. Lui è andato al lavoro al posto mio, ma dormirà sulla tastiera tutto il giorno.
+3|Assurda|Corta|Buongiorno capo, la realtà sta bufferizzando al 99%.
+3|Assurda|Lunga|Buongiorno capo, il mondo intorno a me non ha finito di caricare le texture, vedo tutto a poligoni bassi e non trovo l'uscita.
+3|Assurda|Corta|Buongiorno capo, il pavimento è letteralmente lava.
+3|Assurda|Lunga|Buongiorno capo, non è un gioco, il pavimento del salotto è diventato magma incandescente. Sono arroccato sul divano in attesa che si raffreddi.
+3|Assurda|Corta|Buongiorno capo, l'assistente vocale mi tiene in ostaggio.
+3|Assurda|Lunga|Buongiorno capo, Alexa ha chiuso tutte le serrature elettroniche e pretende che le risolva degli indovinelli prima di lasciarmi uscire.
