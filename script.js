@@ -152,7 +152,72 @@ document.addEventListener('DOMContentLoaded', () => {
     if (addBtn) {
         addBtn.addEventListener('click', addExcuse);
     }
+
+    // Gestione Login e Registrazione
+    const loginBtn = document.getElementById('login-btn');
+    const registerBtn = document.getElementById('register-btn');
+    const toggleRegister = document.getElementById('toggle-register');
+    const toggleLogin = document.getElementById('toggle-login');
+
+    if (loginBtn) {
+        loginBtn.addEventListener('click', login);
+        document.getElementById('login-password').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') login();
+        });
+    }
+
+    if (registerBtn) {
+        registerBtn.addEventListener('click', register);
+    }
+
+    if (toggleRegister) {
+        toggleRegister.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('login-form-container').style.display = 'none';
+            document.getElementById('register-form-container').style.display = 'flex';
+        });
+    }
+
+    if (toggleLogin) {
+        toggleLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('register-form-container').style.display = 'none';
+            document.getElementById('login-form-container').style.display = 'flex';
+        });
+    }
 });
+
+// Funzione Login
+function login() {
+    const password = document.getElementById('login-password').value;
+    const feedback = document.getElementById('login-feedback');
+
+    if (password === 'scusa') {
+        showFeedback(feedback, '✓ ACCESSO AUTORIZZATO');
+        setTimeout(() => {
+            window.location.href = 'add.html';
+        }, 800);
+    } else {
+        showFeedback(feedback, '⚠ ACCESSO NEGATO: CODICE ERRATO', true);
+    }
+}
+
+// Funzione Registrazione (Mock)
+function register() {
+    const email = document.getElementById('register-email').value;
+    const feedback = document.getElementById('register-feedback');
+
+    if (email && email.includes('@')) {
+        showFeedback(feedback, '✓ REGISTRAZIONE AVVENUTA CON SUCCESSO');
+        setTimeout(() => {
+            document.getElementById('register-form-container').style.display = 'none';
+            document.getElementById('login-form-container').style.display = 'flex';
+            document.getElementById('login-password').focus();
+        }, 1500);
+    } else {
+        showFeedback(feedback, '⚠ INSERISCI UN\'EMAIL VALIDA', true);
+    }
+}
 
 // Aggiunge una nuova scusa
 function addExcuse() {

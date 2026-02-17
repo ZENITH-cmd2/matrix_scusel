@@ -1035,6 +1035,38 @@ textarea:focus {
     text-shadow: 0 0 4px var(--matrix-green);
 }
 
+/* ===== Login Styles ===== */
+.login-container {
+    max-width: 500px;
+}
+
+.matrix-input {
+    width: 100%;
+    background: rgba(0, 15, 0, 0.9);
+    border: 1px solid var(--matrix-dim);
+    border-left: 3px solid var(--matrix-dim);
+    color: var(--matrix-green);
+    padding: 1rem;
+    font-family: var(--terminal-font);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    outline: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 4px var(--matrix-green);
+}
+
+.matrix-input::placeholder {
+    color: rgba(0, 255, 65, 0.3);
+    font-size: 0.9rem;
+    letter-spacing: 0;
+}
+
+.matrix-input:focus {
+    border-color: var(--matrix-green);
+    box-shadow: var(--matrix-glow-soft);
+    background: rgba(0, 30, 0, 0.95);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 600px) {
     body {
@@ -1083,5 +1115,9 @@ textarea:focus {
 
     .form-row {
         grid-template-columns: 1fr;
+    }
+
+    .login-container {
+        width: 100%;
     }
 }
