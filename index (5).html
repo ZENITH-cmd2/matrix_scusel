@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATRIX - Generatore Scuse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=VT323&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="scanline"></div>
+    <div class="overlay"></div>
+
+    <main class="terminal-container">
+        <header class="terminal-header">
+            <h1 class="glitch-text" data-text="GENERATORE DI SCUSE">GENERATORE DI SCUSE</h1>
+            <p class="terminal-subtitle">PROTOCOLLO EVASIONE LAVORO</p>
+        </header>
+
+        <section class="console-box">
+            <div class="controls">
+                <div class="filter-group">
+                    <label for="absurdity-filter">LIVELLO ASSURDITÀ</label>
+                    <select id="absurdity-filter">
+                        <option value="all">TUTTI I SETTORI</option>
+                        <option value="1">1 - REALISTICO</option>
+                        <option value="2">2 - MODERATO</option>
+                        <option value="3">3 - TOTALE</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="terminal-output" id="excuse-display">
+                <p class="typing-text">>_ PRONTO PER L'ESTRAZIONE</p>
+            </div>
+
+            <div class="bypass-area">
+                <button id="generate-btn" class="hacker-btn">
+                    <span class="btn-text">GENERA</span>
+                    <span class="btn-glitch" aria-hidden>GENERA</span>
+                </button>
+            </div>
+        </section>
+
+        <footer class="terminal-footer">
+            <p>V0.9.3 - ENCRYPTED CONNECTION</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

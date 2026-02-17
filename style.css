@@ -1,0 +1,303 @@
+:root {
+    --matrix-green: #00FF41;
+    --dark-green: #003B00;
+    --bg-black: #000000;
+    --terminal-font: 'Fira Code', 'Courier New', monospace;
+    --retro-font: 'VT323', monospace;
+    --glow: 0 0 10px rgba(0, 255, 65, 0.5), 0 0 20px rgba(0, 255, 65, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--matrix-green);
+    font-family: var(--terminal-font);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Matrix Background Canvas */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.7;
+    /* Aumentata visibilità */
+}
+
+/* CRT Effects */
+.scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 255, 65, 0.1) 50%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% {
+        bottom: 100%;
+    }
+
+    80% {
+        bottom: 100%;
+    }
+
+    100% {
+        bottom: -100px;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Terminal Container */
+.terminal-container {
+    width: 90%;
+    max-width: 800px;
+    z-index: 1;
+    padding: 2.5rem;
+    border: 1px solid var(--matrix-green);
+    background: rgba(0, 0, 0, 0.7);
+    /* Più trasparente per vedere lo sfondo */
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2), inset 0 0 20px rgba(0, 255, 65, 0.1);
+    position: relative;
+    backdrop-filter: blur(2px);
+}
+
+.terminal-header {
+    border-bottom: 2px solid var(--matrix-green);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.header-prefix {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+}
+
+h1 {
+    font-family: var(--retro-font);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-bottom: 0.5rem;
+    text-shadow: var(--glow);
+}
+
+.terminal-subtitle {
+    font-size: 1rem;
+    opacity: 0.8;
+    letter-spacing: 4px;
+    color: #fff;
+}
+
+/* Glitch Effect */
+.glitch-text {
+    position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(31px, 9999px, 94px, 0);
+    }
+
+    10% {
+        clip: rect(62px, 9999px, 42px, 0);
+    }
+
+    20% {
+        clip: rect(40px, 9999px, 63px, 0);
+    }
+
+    30% {
+        clip: rect(80px, 9999px, 14px, 0);
+    }
+
+    40% {
+        clip: rect(9px, 9999px, 35px, 0);
+    }
+}
+
+/* Console Box */
+.console-box {
+    text-align: left;
+}
+
+.controls {
+    margin-bottom: 2rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+select {
+    background: rgba(0, 59, 0, 0.6);
+    border: 1px solid var(--matrix-green);
+    color: var(--matrix-green);
+    padding: 0.8rem;
+    font-family: var(--terminal-font);
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+select option {
+    background: var(--bg-black);
+}
+
+.terminal-output {
+    min-height: 120px;
+    background: rgba(0, 59, 0, 0.3);
+    border: 1px solid rgba(0, 255, 65, 0.5);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+}
+
+.typing-text {
+    margin-bottom: 0.5rem;
+}
+
+.scusa-txt {
+    color: #fff;
+    text-shadow: 0 0 8px var(--matrix-green);
+    font-weight: 600;
+}
+
+/* Hacker Button */
+.bypass-area {
+    display: flex;
+    justify-content: center;
+}
+
+.hacker-btn {
+    background: var(--dark-green);
+    color: var(--matrix-green);
+    border: 1px solid var(--matrix-green);
+    padding: 1rem 3rem;
+    font-family: var(--terminal-font);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.hacker-btn:hover {
+    background: var(--matrix-green);
+    color: var(--bg-black);
+    box-shadow: 0 0 20px var(--matrix-green);
+}
+
+.btn-glitch {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--matrix-green);
+    color: #000;
+}
+
+.hacker-btn:active .btn-glitch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: glitch-btn 0.1s infinite;
+}
+
+@keyframes glitch-btn {
+    0% {
+        transform: translate(0);
+    }
+
+    50% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(-2px, 2px);
+    }
+}
+
+/* Footer */
+.terminal-footer {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .terminal-container {
+        padding: 1rem;
+    }
+}
