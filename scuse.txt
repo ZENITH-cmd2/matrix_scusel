@@ -30,3 +30,24 @@
 3|Assurda|Lunga|Buongiorno capo, il tostapane sembra aver sviluppato autocoscienza e sto cercando di capire come disattivarlo in sicurezza. Non mi sento di lasciarlo solo.
 3|Assurda|Corta|Buongiorno capo, un drone misterioso sorvola il mio balcone da ore.
 3|Assurda|Lunga|Buongiorno capo, da ore un drone misterioso sta sorvolando il mio balcone e non mi sento tranquillo a uscire di casa. Ho chiamato le autorità.
+
+3|Assurda|Corta|Buongiorno capo, sono bloccato in un loop temporale, le ho già mandato questo messaggio domani.
+3|Assurda|Lunga|Buongiorno capo, sono intrappolato in un loop temporale ricorsivo e continuo a rivivere la colazione senza poter uscire di casa. Spero di uscirne prima della riunione di ieri.
+3|Assurda|Corta|Buongiorno capo, il mio frigorifero ha dichiarato guerra al tostapane.
+3|Assurda|Lunga|Buongiorno capo, gli elettrodomestici di casa si sono scagliati contro di me guidati dall'IA del frigorifero. Sto negoziando una tregua per poter uscire.
+3|Assurda|Corta|Buongiorno capo, ho accidentalmente invertito la gravità in camera da letto.
+3|Assurda|Lunga|Buongiorno capo, stavo riparando una lampadina e ho invertito la polarità gravitazionale della stanza. Sono attualmente sul soffitto e attendo i vigili del fuoco spaziali.
+3|Assurda|Corta|Buongiorno capo, un glitch grafico mi ha reso invisibile.
+3|Assurda|Lunga|Buongiorno capo, a causa di un errore di rendering della realtà sono diventato trasparente. Non posso venire in ufficio finché non riavvio il sistema.
+3|Assurda|Corta|Buongiorno capo, sono stato rapito da un UFO mentre stendevo i panni.
+3|Assurda|Lunga|Buongiorno capo, un raggio traente mi ha prelevato dal balcone. Gli alieni sono amichevoli ma mi riporteranno giù solo dopo aver finito i loro esperimenti.
+3|Assurda|Corta|Buongiorno capo, il mio gatto sta hackerando il Pentagono.
+3|Assurda|Lunga|Buongiorno capo, il gatto ha preso il controllo del mio laptop e sta tentando di accedere ai codici nucleari. Devo fermarlo prima che scateni la Terza Guerra Mondiale.
+3|Assurda|Corta|Buongiorno capo, ho trovato un portale per Narnia nell'armadio.
+3|Assurda|Lunga|Buongiorno capo, cercavo una camicia e sono finito in un regno magico innevato. Il fauno dice che il prossimo treno per la Terra parte tra tre ore.
+3|Assurda|Corta|Buongiorno capo, la mia ombra è scappata via.
+3|Assurda|Lunga|Buongiorno capo, la mia ombra si è staccata e sta correndo per il quartiere. Non posso uscire finché non la riacchiappo o sembrerò un vampiro.
+3|Assurda|Corta|Buongiorno capo, ho perso la connessione con la realtà server.
+3|Assurda|Lunga|Buongiorno capo, sto riscontrando un lag pazzesco nella vita reale, mi muovo a scatti e l'audio non è sincronizzato. Devo aspettare che la patch venga installata.
+3|Assurda|Corta|Buongiorno capo, sono diventato un NPC.
+3|Assurda|Lunga|Buongiorno capo, oggi ho solo linee di dialogo preimpostate e non posso compiere azioni non scriptate. Tornerò giocabile al prossimo aggiornamento.
