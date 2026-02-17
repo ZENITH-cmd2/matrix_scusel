@@ -102,8 +102,20 @@ async function loadExcuses() {
     }
 }
 
+// Copia la scusa negli appunti
+function copyExcuse(text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+            btn.classList.remove('copied');
+        }, 1500);
+    });
+}
+
 // Typewriter effect for excuses
-function typeEffect(element, text) {
+function typeEffect(element, text, container) {
     let i = 0;
     let current = '';
     element.innerHTML = '<span class="typing-cursor">&gt; _</span>';
@@ -115,6 +127,13 @@ function typeEffect(element, text) {
         } else {
             clearInterval(interval);
             element.innerHTML = '&gt; ' + text;
+            // Aggiungi bottone copia
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'copy-btn';
+            copyBtn.title = 'Copia scusa';
+            copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+            copyBtn.addEventListener('click', () => copyExcuse(text, copyBtn));
+            container.appendChild(copyBtn);
         }
     }, 30);
 }
@@ -142,7 +161,7 @@ function generateExcuse() {
     excuseP.className = 'scusa-txt';
     displayArea.appendChild(excuseP);
 
-    typeEffect(excuseP, selected.sentence);
+    typeEffect(excuseP, selected.sentence, displayArea);
 }
 
 // Event Listeners

@@ -225,6 +225,36 @@ select option {
     font-weight: 600;
 }
 
+/* Copy Button - ChatGPT style */
+.terminal-output {
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    color: rgba(0, 255, 65, 0.4);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-btn:hover {
+    color: var(--matrix-green);
+    background: rgba(0, 255, 65, 0.1);
+}
+
+.copy-btn.copied {
+    color: var(--matrix-green);
+}
+
 /* Hacker Button */
 .bypass-area {
     display: flex;
