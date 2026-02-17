@@ -90,7 +90,7 @@ function parseExcuses(text) {
 // Carica scuse: prima prova fetch, se fallisce usa i dati integrati
 async function loadExcuses() {
     try {
-        const response = await fetch('file.txt');
+        const response = await fetch('scuse.txt');
         if (!response.ok) throw new Error('Fetch fallito');
         const text = await response.text();
         excuses = parseExcuses(text);
